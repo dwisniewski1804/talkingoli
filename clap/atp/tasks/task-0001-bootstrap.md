@@ -1,4 +1,4 @@
-# T1 — Repo Bootstrap (Monorepo Skeleton)
+# Task 0001 — Repo Bootstrap (Monorepo Skeleton)
 
 ## Goal
 Create a clean monorepo skeleton for the TalkingOli project with shared tooling.

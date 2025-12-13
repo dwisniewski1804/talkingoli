@@ -39,8 +39,31 @@ TalkingOli is built as a **modular monolith** with clear domain boundaries and e
 - **Stages** — interview stages (HRWomen in MVP)
 - **Payments** — Stripe checkout & webhooks
 - **Delivery** — delayed reports & email delivery
-- **Audio** — TTS (ElevenLabs) & STT
+- **Audio** — TTS (ElevenLabs) & STT (Whisper)
 - **Jobs** — background processing (BullMQ)
+
+---
+
+## 🧠 AI Engineering Discipline (CLAP)
+
+TalkingOli is developed using an internal framework called  
+**CLAP — Context Log Agent Protocol**.
+
+CLAP is **not part of the product runtime**.  
+It is an **engineering framework** used to structure how AI is applied during development.
+
+CLAP enforces:
+- explicit context management,
+- durable architectural decision records (ADRs),
+- strict separation between **thinking** and **execution**,
+- clear ownership of AI-generated artifacts.
+
+This allows the project to:
+- remain auditable despite heavy AI usage,
+- evolve safely as prompts, models, and policies change,
+- treat AI as a collaborator, not a black box.
+
+The framework lives in the `clap/` directory and is fully documented there.
 
 ---
 
@@ -50,7 +73,7 @@ TalkingOli is built as a **modular monolith** with clear domain boundaries and e
 - Node.js (NestJS)
 - MongoDB (logical relational model)
 - Redis + BullMQ (background jobs)
-- OpenAI API (LLM + Speech-to-Text)
+- **OpenAI API (LLM + Whisper Speech-to-Text)**
 - ElevenLabs API (Text-to-Speech)
 - Stripe (payments)
 
@@ -70,8 +93,9 @@ TalkingOli is built as a **modular monolith** with clear domain boundaries and e
 - Interview language is resolved from the **job offer**
 - GPT generates interview content **directly in the target language**
 - ElevenLabs converts **pure text → voice**
+- Candidate audio answers are transcribed asynchronously using **OpenAI Whisper (batch STT)**
 - One recruiter voice is **randomly selected per interview stage** and kept consistent
-- Audio answers are transcribed and evaluated by AI
+- Transcriptions are evaluated by AI as part of the interview policy
 
 ---
 
@@ -153,6 +177,7 @@ TalkingOli focuses on:
 
 **If this project resonates with you — star ⭐ the repo and join the discussion.**
 
+---
 
 This project is licensed under the **Business Source License 1.1 (BSL)**.
 
