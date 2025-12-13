@@ -81,16 +81,30 @@ If required information is missing:
 
 Every task MUST be implemented on a new branch.
 
-Branch naming format (exact):
+Branch naming format (default):
 
 ```
-feat/<task-id>-short-description
+feature/<task-id>-short-description
 ```
 
-Example:
+Prefixes reinforce intent:
+
+* `feature/…` — net-new functionality (default for tasks)
+* `bugfix/…` — fixes tied to an existing bug/task
+* `chore/…` — tooling or repo maintenance
+* `hotfix/…` — urgent patches to release branches
+
+Rules:
+
+1. Always include the CLAP/ATP task ID when one exists.
+2. Use lowercase hyphenated slugs (e.g. `add-health-endpoint`).
+3. Branch from `main` unless coordinating a release branch; merge back via PR.
+
+Examples:
 
 ```
-feat/T7-intake-endpoint
+feature/T7-intake-endpoint
+bugfix/T1-cors-headers
 ```
 
 You MUST NOT commit directly to `main`.
@@ -102,16 +116,21 @@ You MUST NOT commit directly to `main`.
 * Keep commits small, logical, and focused
 * Avoid large or mixed commits
 
-Commit message format (exact):
+Commit message format (preferred):
 
 ```
-<TASK-ID>: <short description>
+<type>(<optional scope>): <imperative summary>
 ```
 
-Example:
+Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `build`.
+Scope: folder or component such as `api`, `web`, `infra`.
+Keep the summary ≤ 72 characters, write in the imperative voice, and mention the task ID in the body when useful (e.g. `Refs task-0001`).
+
+Examples:
 
 ```
-T7: Add POST /submissions intake endpoint
+feat(api): add health endpoint
+fix(web): allow localhost CORS (task-0001)
 ```
 
 ---

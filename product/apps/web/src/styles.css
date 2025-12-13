@@ -1,0 +1,103 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background-color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at top, #e0f2fe, transparent 50%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+  padding: 32px;
+  width: min(420px, 90vw);
+  text-align: center;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-header {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.app-header nav {
+  display: flex;
+  gap: 16px;
+}
+
+.app-header a {
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+
+.app-header a.active {
+  border-bottom: 2px solid #0f172a;
+}
+
+.tag {
+  margin-left: 8px;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status {
+  font-size: 1rem;
+  margin-top: 16px;
+}
+
+.status span {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.status .ok {
+  background: #22c55e;
+}
+
+.status .error {
+  background: #ef4444;
+}
+
+small {
+  display: block;
+  margin-top: 24px;
+  color: #475569;
+}

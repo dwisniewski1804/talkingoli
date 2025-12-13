@@ -1,4 +1,4 @@
-# T1-001 — Product Skeleton & Local Docker Environment
+# T1 — Product Skeleton & Local Docker Environment
 
 ## Goal
 
@@ -32,7 +32,7 @@ This task establishes the execution boundary of the product and serves as the fo
 
 ### Docker Environment
 - Provide a single `docker-compose.yml` that starts:
-  - product-api
+  - talkingoli-api
   - product-web
   - mongo
   - redis
@@ -47,7 +47,7 @@ This task establishes the execution boundary of the product and serves as the fo
   - Expose `GET /health`
   - Response:
     ```json
-    { "status": "ok", "service": "product-api" }
+    { "status": "ok", "service": "talkingoli-api" }
     ```
 - Frontend:
   - Load successfully in the browser
@@ -119,4 +119,3 @@ Configuration only (no real external calls):
 - Decisions made here (structure, naming, ports) are considered **foundational**.
 - Keep implementation minimal — correctness and repeatability take priority over completeness.
 - CLAP remains strictly **out of runtime scope**.
-
