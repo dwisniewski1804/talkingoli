@@ -40,6 +40,7 @@ TalkingOli is built as a **modular monolith** with clear domain boundaries and e
 - **Payments** — Stripe checkout & webhooks
 - **Delivery** — delayed reports & email delivery
 - **Audio** — TTS (ElevenLabs) & STT (Whisper)
+- **Audio** — TTS (ElevenLabs) & STT (Whisper)
 - **Jobs** — background processing (BullMQ)
 
 ---
@@ -74,6 +75,7 @@ The framework lives in the `clap/` directory and is fully documented there.
 - MongoDB (logical relational model)
 - Redis + BullMQ (background jobs)
 - **OpenAI API (LLM + Whisper Speech-to-Text)**
+- **OpenAI API (LLM + Whisper Speech-to-Text)**
 - ElevenLabs API (Text-to-Speech)
 - Stripe (payments)
 
@@ -94,7 +96,9 @@ The framework lives in the `clap/` directory and is fully documented there.
 - GPT generates interview content **directly in the target language**
 - ElevenLabs converts **pure text → voice**
 - Candidate audio answers are transcribed asynchronously using **OpenAI Whisper (batch STT)**
+- Candidate audio answers are transcribed asynchronously using **OpenAI Whisper (batch STT)**
 - One recruiter voice is **randomly selected per interview stage** and kept consistent
+- Transcriptions are evaluated by AI as part of the interview policy
 - Transcriptions are evaluated by AI as part of the interview policy
 
 ---
@@ -177,6 +181,7 @@ TalkingOli focuses on:
 
 **If this project resonates with you — star ⭐ the repo and join the discussion.**
 
+---
 ---
 
 This project is licensed under the **Business Source License 1.1 (BSL)**.
