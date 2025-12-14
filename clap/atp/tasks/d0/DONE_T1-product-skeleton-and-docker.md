@@ -103,13 +103,13 @@ Configuration only (no real external calls):
 
 ## Definition of Done
 
-- [ ] Product folder structure is created and committed
-- [ ] Docker Compose setup is functional
-- [ ] Backend health endpoint implemented
-- [ ] Frontend displays backend health status
-- [ ] Redis queue and worker execute a test job
-- [ ] README and `.env.example` are present and accurate
-- [ ] Entire system runs via a single command
+- [x] Product folder structure is created and committed
+- [x] Docker Compose setup is functional
+- [x] Backend health endpoint implemented
+- [x] Frontend displays backend health status
+- [x] Redis queue and worker execute a test job
+- [x] README and `.env.example` are present and accurate
+- [x] Entire system runs via a single command
 
 ---
 
